@@ -1,0 +1,191 @@
+/* --- Login Form Container --- */
+.form-container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 40px 30px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  color: #333333;
+  text-align: center;
+}
+
+/* Form Title */
+.form-container h1 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #0e6251;
+}
+
+/* Input Fields */
+.form-container input[type="email"],
+.form-container input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #cccccc;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form-container input:focus {
+  border-color: #0e6251;
+  box-shadow: 0 0 8px rgba(14, 98, 81, 0.2);
+  outline: none;
+}
+
+/* Login Button */
+.form-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #0e6251;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-container button:hover {
+  background-color: #117a65;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 480px) {
+  .form-container {
+    margin: 30px 15px;
+    padding: 30px 20px;
+  }
+
+  .form-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .form-container button {
+    font-size: 16px;
+  }
+}
+/* ================== GENERAL FORM CONTAINER ================== */
+.form-container,
+.signup-container {
+  max-width: 450px;
+  margin: 50px auto;
+  padding: 40px 30px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  color: #333333;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* Card Hover Effect */
+.form-container:hover,
+.signup-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ================== FORM TITLES ================== */
+.form-container h1,
+.signup-container h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #0e6251;
+}
+
+/* ================== INPUT FIELDS ================== */
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"],
+.form-container input[type="number"],
+.signup-container input[type="text"],
+.signup-container input[type="email"],
+.signup-container input[type="password"],
+.signup-container input[type="number"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #cccccc;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+/* Focus Effect */
+.form-container input:focus,
+.signup-container input:focus {
+  border-color: #0e6251;
+  box-shadow: 0 0 8px rgba(14, 98, 81, 0.2);
+  outline: none;
+}
+
+/* ================== ROLE SELECTION FOR SIGNUP ================== */
+.signup-container .role-selection {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.signup-container label {
+  font-size: 16px;
+  color: #555555;
+  cursor: pointer;
+}
+
+.signup-container input[type="radio"] {
+  margin-right: 8px;
+  accent-color: #0e6251; /* match site theme */
+}
+
+/* ================== BUTTONS ================== */
+.form-container button,
+.signup-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #0e6251;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-container button:hover,
+.signup-container button:hover {
+  background-color: #117a65;
+  transform: translateY(-2px);
+}
+
+/* ================== RESPONSIVE DESIGN ================== */
+@media screen and (max-width: 480px) {
+  .form-container,
+  .signup-container {
+    margin: 30px 15px;
+    padding: 30px 20px;
+  }
+
+  .form-container h1,
+  .signup-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .form-container button,
+  .signup-container button {
+    font-size: 16px;
+  }
+
+  .signup-container .role-selection {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+}

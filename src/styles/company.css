@@ -1,0 +1,64 @@
+/* General Page Styling for Company Pages */
+.page-container {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7f9f9;
+  color: #333;
+  text-align: center;
+  padding: 4rem 1rem;
+  min-height: 70vh;
+}
+
+/* Headings */
+.page-container h1 {
+  font-size: 2rem;
+  color: #1f6c5c;
+  margin-bottom: 1.2rem;
+}
+
+.page-container p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Inputs and Buttons */
+.page-container input,
+.page-container textarea,
+.page-container button {
+  font-family: 'Poppins', sans-serif;
+}
+
+.page-container input,
+.page-container textarea {
+  width: 300px;
+  padding: 0.7rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.page-container button {
+  background-color: #1f6c5c;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.page-container button:hover {
+  background-color: #158363;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-container {
+    padding: 3rem 1rem;
+  }
+
+  .page-container input,
+  .page-container textarea {
+    width: 90%;
+  }
+}
