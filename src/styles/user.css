@@ -62,3 +62,98 @@
     width: 90%;
   }
 }
+
+
+/* ---------- User Pages ---------- */
+.user-page-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Tutorial Page */
+.tutorial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.tutorial-card {
+  background-color: #fffdf9;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.tutorial-card h3 {
+  color: #0e6251;
+  margin-bottom: 10px;
+}
+
+.tutorial-card p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-top: 10px;
+}
+
+/* Community Page */
+.community-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.community-form textarea {
+  resize: none;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  min-height: 80px;
+  margin-bottom: 15px;
+}
+
+.community-form button {
+  width: 120px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #0e6251;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.community-form button:hover {
+  background-color: #117a65;
+}
+
+.community-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.community-post {
+  background-color: #fffdf9;
+  padding: 12px 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.community-post p {
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.community-post span {
+  font-size: 0.85rem;
+  color: #0e6251;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tutorial-grid {
+    grid-template-columns: 1fr;
+  }
+}

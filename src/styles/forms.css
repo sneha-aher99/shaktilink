@@ -1,191 +1,92 @@
-/* --- Login Form Container --- */
-.form-container {
+/* src/styles/forms.css */
+
+/* General page styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Login & Signup containers */
+.form-container, .signup-container {
   max-width: 400px;
   margin: 60px auto;
-  padding: 40px 30px;
-  background-color: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  font-family: 'Poppins', sans-serif;
-  color: #333333;
+  background: #ffffff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
   text-align: center;
-}
-
-/* Form Title */
-.form-container h1 {
-  font-size: 2rem;
   margin-bottom: 25px;
-  color: #0e6251;
+  color: #333333;
 }
 
-/* Input Fields */
-.form-container input[type="email"],
-.form-container input[type="password"] {
+/* Inputs */
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="number"],
+textarea {
   width: 100%;
   padding: 12px 15px;
   margin-bottom: 15px;
-  border-radius: 10px;
+  border-radius: 8px;
   border: 1px solid #cccccc;
-  font-size: 16px;
-  transition: all 0.3s ease;
-}
-
-.form-container input:focus {
-  border-color: #0e6251;
-  box-shadow: 0 0 8px rgba(14, 98, 81, 0.2);
+  font-size: 15px;
   outline: none;
+  transition: 0.3s;
 }
 
-/* Login Button */
-.form-container button {
+input:focus,
+textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Buttons */
+button {
   width: 100%;
   padding: 12px;
   background-color: #0e6251;
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
+  color: #ffffff;
+  font-size: 16px;
   border: none;
-  border-radius: 12px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
-.form-container button:hover {
-  background-color: #117a65;
-  transform: translateY(-2px);
+button:hover {
+  background: linear-gradient(135deg, #43ccb1, #f9d5bb);
 }
 
-/* Responsive Design */
-@media screen and (max-width: 480px) {
-  .form-container {
-    margin: 30px 15px;
-    padding: 30px 20px;
-  }
-
-  .form-container h1 {
-    font-size: 1.8rem;
-  }
-
-  .form-container button {
-    font-size: 16px;
-  }
+/* Role selection radio buttons */
+form div label {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 14px;
+  cursor: pointer;
 }
-/* ================== GENERAL FORM CONTAINER ================== */
-.form-container,
-.signup-container {
-  max-width: 450px;
-  margin: 50px auto;
-  padding: 40px 30px;
-  background-color: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  font-family: 'Poppins', sans-serif;
-  color: #333333;
+
+form div input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Links */
+p {
   text-align: center;
-  transition: all 0.3s ease;
+  font-size: 14px;
+  margin-top: 15px;
 }
 
-/* Card Hover Effect */
-.form-container:hover,
-.signup-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+p a {
+  color: #007bff;
+  text-decoration: none;
 }
 
-/* ================== FORM TITLES ================== */
-.form-container h1,
-.signup-container h2 {
-  font-size: 2rem;
-  margin-bottom: 25px;
-  color: #0e6251;
-}
-
-/* ================== INPUT FIELDS ================== */
-.form-container input[type="text"],
-.form-container input[type="email"],
-.form-container input[type="password"],
-.form-container input[type="number"],
-.signup-container input[type="text"],
-.signup-container input[type="email"],
-.signup-container input[type="password"],
-.signup-container input[type="number"] {
-  width: 100%;
-  padding: 12px 15px;
-  margin-bottom: 15px;
-  border-radius: 10px;
-  border: 1px solid #cccccc;
-  font-size: 16px;
-  transition: all 0.3s ease;
-}
-
-/* Focus Effect */
-.form-container input:focus,
-.signup-container input:focus {
-  border-color: #0e6251;
-  box-shadow: 0 0 8px rgba(14, 98, 81, 0.2);
-  outline: none;
-}
-
-/* ================== ROLE SELECTION FOR SIGNUP ================== */
-.signup-container .role-selection {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
-}
-
-.signup-container label {
-  font-size: 16px;
-  color: #555555;
-  cursor: pointer;
-}
-
-.signup-container input[type="radio"] {
-  margin-right: 8px;
-  accent-color: #0e6251; /* match site theme */
-}
-
-/* ================== BUTTONS ================== */
-.form-container button,
-.signup-container button {
-  width: 100%;
-  padding: 12px;
-  background-color: #0e6251;
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.form-container button:hover,
-.signup-container button:hover {
-  background-color: #117a65;
-  transform: translateY(-2px);
-}
-
-/* ================== RESPONSIVE DESIGN ================== */
-@media screen and (max-width: 480px) {
-  .form-container,
-  .signup-container {
-    margin: 30px 15px;
-    padding: 30px 20px;
-  }
-
-  .form-container h1,
-  .signup-container h2 {
-    font-size: 1.8rem;
-  }
-
-  .form-container button,
-  .signup-container button {
-    font-size: 16px;
-  }
-
-  .signup-container .role-selection {
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
-  }
+p a:hover {
+  text-decoration: underline;
 }

@@ -1,31 +1,33 @@
 import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
-import { auth, db } from "../firebase"; // adjust path if needed
+import { auth, db } from "../firebase";
+import { useNavigate } from "react-router-dom";
+import "../styles/forms.css";
 
 export default function Signup() {
+  const navigate = useNavigate();
+
   const [role, setRole] = useState(""); // "user" or "company"
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // For user profile
+  // User Fields
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [skills, setSkills] = useState("");
 
-  // For company profile
+  // Company Fields
   const [companyName, setCompanyName] = useState("");
   const [industry, setIndustry] = useState("");
   const [website, setWebsite] = useState("");
 
   const handleSignup = async (e) => {
     e.preventDefault();
-
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      // Create user or company profile in Firestore
       if (role === "user") {
         await setDoc(doc(db, "users", user.uid), {
           email,
@@ -35,6 +37,7 @@ export default function Signup() {
           skills,
           createdAt: new Date(),
         });
+        navigate("/"); // redirect to homepage or user dashboard
       } else if (role === "company") {
         await setDoc(doc(db, "users", user.uid), {
           email,
@@ -44,9 +47,8 @@ export default function Signup() {
           website,
           createdAt: new Date(),
         });
+        navigate("/company/dashboard"); // ✅ redirect to company dashboard
       }
-
-      alert("Account created successfully!");
     } catch (error) {
       alert(error.message);
     }
@@ -56,7 +58,6 @@ export default function Signup() {
     <div className="signup-container">
       <h2>Sign Up</h2>
       <form onSubmit={handleSignup}>
-
         {/* Role Selection */}
         <div>
           <label>
@@ -94,7 +95,7 @@ export default function Signup() {
           required
         />
 
-        {/* If role is user → show user fields */}
+        {/* User fields */}
         {role === "user" && (
           <>
             <input
@@ -113,14 +114,14 @@ export default function Signup() {
             />
             <input
               type="text"
-              placeholder="Skills (e.g. stitching, teaching...)"
+              placeholder="Skills"
               value={skills}
               onChange={(e) => setSkills(e.target.value)}
             />
           </>
         )}
 
-        {/* If role is company → show company fields */}
+        {/* Company fields */}
         {role === "company" && (
           <>
             <input
@@ -132,7 +133,7 @@ export default function Signup() {
             />
             <input
               type="text"
-              placeholder="Industry (e.g. IT, Textile...)"
+              placeholder="Industry"
               value={industry}
               onChange={(e) => setIndustry(e.target.value)}
               required
